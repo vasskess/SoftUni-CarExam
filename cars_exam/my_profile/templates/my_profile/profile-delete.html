@@ -7,7 +7,7 @@
           <!-- Delete Profile Form -->
         <form id='delete' method="post" action="{% url "delete-profile" %}">
             {% csrf_token %}
-
+            {{ form }}
         <!-- Confirm Button -->
         <input class="btn submit" type="submit" value="Yes">
 

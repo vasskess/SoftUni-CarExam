@@ -28,7 +28,7 @@ class EditProfileForm(BaseProfileForm):
 class DeleteProfileForm(BaseProfileForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.__disable_fields()
+        self.__hide_fields()
 
     def save(self, commit=True):
         if commit:
@@ -36,7 +36,7 @@ class DeleteProfileForm(BaseProfileForm):
             self.instance.delete()
         return self.instance
 
-    def __disable_fields(self):
+    def __hide_fields(self):
         for _, field in self.fields.items():
-            field.widget.attrs["disabled"] = "disabled"
+            field.widget = forms.HiddenInput()
             field.required = False

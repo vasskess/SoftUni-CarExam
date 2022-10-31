@@ -27,7 +27,7 @@
                 <!-- user age -->
                 <p class="description">Age: {{ profile.age }}</p>
                 <!-- total price of all cars -->
-                <p class="description">Total price: {{ average|floatformat:3 }}</p>
+                <p class="description">Total price: {{ total_price|floatformat:3 }}</p>
                 <!-- Edit/Delete buttons -->
                 <div class="buttons">
                     <a href="{% url "edit-profile" %}" class="edit-button">Edit</a>

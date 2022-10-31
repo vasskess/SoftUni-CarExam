@@ -29,12 +29,7 @@ def profile_details(request):
 
     total_price = sum([car.price for car in total_cars])
 
-    try:
-        average = total_price / len(total_cars)
-    except ZeroDivisionError:
-        average = 0.0
-
-    context = {"profile": profile, "total_cars": total_cars, "average": average}
+    context = {"profile": profile, "total_cars": total_cars, "total_price": total_price}
     return render(
         request, template_name="my_profile/profile-details.html", context=context
     )
